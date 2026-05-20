@@ -31,7 +31,7 @@ export function PageHeader({
           </Link>
         </Button>
         <Button variant="outline" size="sm" asChild>
-          <Link href="mailto:business@codewithantonio.com">
+          <Link href="mailto:johndoe53622@gmail.com">
             <Headphones />
             <span className="hidden lg:block">Need help?</span>
           </Link>
