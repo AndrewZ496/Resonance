@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
@@ -11,7 +11,7 @@ export const WavyBackground = ({
   containerClassName,
   colors,
   waveWidth,
-  backgroundFill, 
+  backgroundFill,
   blur = 10,
   speed = "fast",
   waveOpacity = 0.5,
@@ -103,15 +103,10 @@ export const WavyBackground = ({
     };
   }, []);
 
-  const [isSafari, setIsSafari] = useState(false);
-  useEffect(() => {
-    // I'm sorry but i have got to support it on safari.
-    setIsSafari(
-      typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome"),
-    );
-  }, []);
+  const isSafari =
+    typeof window !== "undefined" &&
+    navigator.userAgent.includes("Safari") &&
+    !navigator.userAgent.includes("Chrome");
 
   return (
     <div
